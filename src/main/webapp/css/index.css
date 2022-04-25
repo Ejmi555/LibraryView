@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/pexels-janko-ferlic-590493.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    margin: auto;
+    color: rgb(50, 48, 48);
+    font-size: 3em;
+    text-align: center;
+    background-color: rgba(194, 194, 194, 0.5);
+    padding: 0.75em;
+
+}
