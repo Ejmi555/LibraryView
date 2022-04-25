@@ -2,15 +2,15 @@ package pl.library.libraryview;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
 import java.util.stream.Collectors;
 
 
-@Controller
+@RestController
 public class LibraryController {
 
     @GetMapping("/")

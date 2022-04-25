@@ -1,25 +1,32 @@
 package pl.library.libraryview.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Getter
 @Setter
 @AllArgsConstructor
-@RequiredArgsConstructor
+@NoArgsConstructor
 
+@Entity
+@Table(name = "book_loans")
 public class Loan {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "loan_id")
     private int loanId;
-    private Book borrowedBook;
-    private LocalDate loanDate;
-    private LocalDate returnDate;
-    private Reader borrowingReader;
 
+    @OneToOne
+    private Book borrowedBook;
+    @Column(name = "loan_date", nullable = false)
+    private LocalDate loanDate;
+    @Column(name = "return_date")
+    private LocalDate returnDate;
+    @OneToOne
+    private Reader borrowingReader;
 
     @Override
     public String toString() {

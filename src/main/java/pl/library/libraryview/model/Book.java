@@ -1,25 +1,29 @@
 package pl.library.libraryview.model;
 
 import lombok.*;
+import javax.persistence.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
-@RequiredArgsConstructor
+@NoArgsConstructor
+@ToString
+@Entity
+@Table(name = "books")
 public class Book {
 
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "book_id")
+    private int bookId;
+    @Column(name = "title", nullable = false)
     private String title;
+    @Column(name = "author", nullable = false)
     private String author;
+    @Column(name = "isbn", nullable = false)
     private Long isbn;
+    @Column(name = "is_available", nullable = false)
+    private boolean isAvailable;
 
-    @Override
-    public String toString() {
-        return "Book {" +
-                "id = " + id +
-                ", title = " + title +
-                ", author = " + author +
-                ", isbn = " + isbn +
-                '}';
     }
-}
+
