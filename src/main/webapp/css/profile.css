@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/sincerely-media-_-hjiem5TqI-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgb(50, 48, 48);
+}
+
+body {
+    float: right;
+}
+
+figure {
+ margin: 0;
+}
+
+.image {
+    margin-left: 2em;
+    height: 35%;
+    width: auto;
+    border: 2px solid  rgb(50, 48, 48);
+}
+
+h1 {
+    font-size: 2.5em;
+    padding: 1.5em;
+    margin-left: 1em;
+}
+
+.btn {
+    padding: 0.25em 0.75em;
+    margin: 1em;
+    font-size: 1em;
+
+}
+.btn:hover {
+    color: green;
+}
+
+.role {
+    font-size: 1.5em;
+    padding: 1em;
+}

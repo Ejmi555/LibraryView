@@ -4,7 +4,9 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
+@Builder
 @Getter
 @Setter
 @AllArgsConstructor
@@ -27,5 +29,9 @@ public class Reader {
     private String telephoneNumber;
     @Column(name = "registration_date", nullable = false)
     private LocalDate registrationDate;
+    @Column(name = "resignation_date")
+    private LocalDate resignationDate;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "reader")
+    private List<Loan> loans;
 
 }

@@ -2,6 +2,7 @@ package pl.library.libraryview.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -20,17 +21,25 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/").permitAll()
+                .antMatchers( "/").permitAll()
                 .antMatchers("/css/**").permitAll()
                 .antMatchers("/images/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/**").hasAnyRole("LIBRARIAN", "READER")
+                .antMatchers(HttpMethod.POST,"/**").hasRole("LIBRARIAN")
+                .antMatchers(HttpMethod.DELETE).hasRole("LIBRARIAN")
+                .antMatchers(HttpMethod.PUT).hasRole("LIBRARIAN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .permitAll()
+                .and().httpBasic()
+                .and().csrf().disable()
+                .exceptionHandling().accessDeniedPage("/accessDenied")
                 .and()
                 .logout()
                 .permitAll();
+
     }
 
     @Bean
@@ -51,4 +60,5 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                         .build();
         return new InMemoryUserDetailsManager(librarian, reader);
     }
+
 }

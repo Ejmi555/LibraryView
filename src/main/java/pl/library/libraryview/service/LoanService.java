@@ -1,13 +1,15 @@
 package pl.library.libraryview.service;
 
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 import pl.library.libraryview.repository.LoanRepository;
 
-@RestController
+@Service
 public class LoanService {
 
     private LoanRepository loanRepository;
 
     public LoanService(LoanRepository loanRepository) {
     }
+
+
 }

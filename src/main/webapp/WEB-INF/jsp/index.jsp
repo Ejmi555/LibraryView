@@ -13,5 +13,28 @@
 </head>
 <body>
     <header><h1>Library Homepage</h1></header>
+
+    <article>
+        <h3>What would you like to do?</h3>
+                <div>
+                    <p>Regarding a book:</p>
+                    <a href="/books">Browse the books</a><br>
+                    <a href="/books/find">Find a book</a><br>
+                    <a href="/books/add">Add a book</a><br>
+                </div>
+                <div>
+                    <p>Regarding a reader:</p>
+                    <a href="/profile">Check profile</a><br>
+                    <a href="/readers">Browse readers</a><br>
+                    <a href="/readers/find">Find a reader</a><br>
+                    <a href="/readers/add">Add a reader</a><br>
+                    <a href="ścieżka">Register reader's resignation</a><br>
+                </div>
+                <div>
+                    <p>Regarding loans:</p>
+                    <a href="ścieżka">Register lending a book</a><br>
+                    <a href="ścieżka">Register returning a book</a>
+                </div>
+    </article>
 </body>
 </html>
