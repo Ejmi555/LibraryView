@@ -10,6 +10,7 @@
     <title>Library Homepage</title>
     <base href="${pageContext.request.contextPath}">
     <link rel="stylesheet" href="css/index.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
 </head>
 <body>
     <header><h1>Library Homepage</h1></header>

@@ -4,6 +4,7 @@
     <head>
         <meta charset="utf-8">
         <title>Adding new reader</title>
+        <link rel="stylesheet" href="../css/operation.css" type="text/css">
     </head>
     <body>
         <form action="/readers/add" method="post">

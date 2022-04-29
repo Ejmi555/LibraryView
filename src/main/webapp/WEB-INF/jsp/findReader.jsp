@@ -11,6 +11,8 @@
 <html lang="en">
     <head>
         <title>Form - getting a reader by bookId</title>
+        <link rel="stylesheet" href="../css/operation.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
     </head>
     <body>
     <form action="/reader" method="get">

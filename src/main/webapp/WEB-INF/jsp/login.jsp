@@ -10,6 +10,7 @@
         <title>Log in to your account</title>
         <base href="${pageContext.request.contextPath}">
         <link rel="stylesheet" href="css/login.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="margin">

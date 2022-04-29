@@ -11,6 +11,7 @@
         <title>Your profile</title>
         <base href="${pageContext.request.contextPath}">
         <link rel="stylesheet" href="css/profile.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
     </head>
 <body>
 
