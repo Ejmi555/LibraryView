@@ -21,3 +21,10 @@ a {
 a:hover {
     color:cornflowerblue;
 }
+
+.btn {
+    padding: 0.25em 0.5em;
+}
+.btn:hover {
+    color: green;
+}

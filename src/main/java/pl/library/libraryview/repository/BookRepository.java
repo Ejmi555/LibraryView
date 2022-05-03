@@ -11,17 +11,17 @@ import java.util.List;
 public interface BookRepository extends JpaRepository<Book, Integer> {
 
     @Query("FROM Book ORDER BY title")
-    List<Book> findAllOrderByTitle();
+    List<Book> findBooksOrderByTitle();
 
     @Query("FROM Book ORDER BY author")
-    List<Book> findAllOrderByAuthor();
+    List<Book> findBooksOrderByAuthor();
 
     @Query("FROM Book ORDER BY bookId")
-    List<Book> findAllOrderByBookId();
+    List<Book> findBooksOrderByBookId();
 
-    @Query("FROM Book WHERE title = :title")
-    List<Book> findAllByTitle(@Param("title") String title);
+    @Query("FROM Book WHERE title LIKE %:title% ORDER BY author")
+    List<Book> findBooksByTitle(@Param("title") String title);
 
     @Query("FROM Book WHERE author = :author")
-    List<Book> findAllByAuthor(@Param("author") String author);
+    List<Book> findBooksByAuthor(@Param("author") String author);
 }

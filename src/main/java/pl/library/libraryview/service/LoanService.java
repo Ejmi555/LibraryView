@@ -1,7 +1,14 @@
 package pl.library.libraryview.service;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+import pl.library.libraryview.model.Book;
+import pl.library.libraryview.model.Loan;
+import pl.library.libraryview.model.Reader;
 import pl.library.libraryview.repository.LoanRepository;
+
+import java.time.LocalDate;
 
 @Service
 public class LoanService {
@@ -11,5 +18,16 @@ public class LoanService {
     public LoanService(LoanRepository loanRepository) {
     }
 
-
+    public Loan addLoan(Book book, Reader reader) {
+        if (!book.getIsAvailable()) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT);
+        }
+        Loan loan = Loan.builder()
+                .book(book)
+                .reader(reader)
+                .loanDate(LocalDate.now())
+                .build();
+        return loanRepository.save(loan);
+    }
 }
+

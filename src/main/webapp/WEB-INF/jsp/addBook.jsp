@@ -19,7 +19,9 @@
     <input type="number" name="isbn">
   </label>
   <br>
-  <button type="submit">Add this book</button>
+  <button class="btn" type="submit">Add this book</button>
 </form>
+<br>
+<a href="/"><button class="btn">Back</button></a>
 </body>
 </html>

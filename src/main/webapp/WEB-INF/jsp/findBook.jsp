@@ -8,19 +8,21 @@
         <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
     </head>
     <body>
-        <form action="/book" method="get">
+        <form action="/books" method="get">
             <p>Search by book id:</p>
             <label>
                 <input type="number" name="id">
             </label>
-            <button type="submit">Submit</button>
+            <button class="btn" type="submit">Submit</button>
         </form>
-        <form action="/book/find/title" method="get">
+        <form action="/books/find/title" method="get">
             <p>Search by book title:</p>
             <label>
                 <input type="text" name="title">
             </label>
-            <button type="submit">Submit</button>
+            <button class="btn" type="submit">Submit</button>
         </form>
+        <br>
+        <a href="/"><button class="btn">Back</button></a>
     </body>
 </html>

@@ -54,10 +54,31 @@ public class LibraryController {
         if (optionalBook.isEmpty()) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
-
         Book book = optionalBook.get();
         book.setIsAvailable(false);
         return bookService.saveBook(book);
+    }
+
+    @DeleteMapping("/books/{bookId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteBookById(@PathVariable Integer bookId) {
+        Optional<Book> optionalBook = bookService.findById(bookId);
+        if (optionalBook.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        Book book = optionalBook.get();
+        bookService.deleteBook(book);
+    }
+
+    @DeleteMapping("/readers/{readerId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteReaderById(@PathVariable Integer readerId) {
+        Optional<Reader> optionalReader = readerService.findById(readerId);
+        if (optionalReader.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        Reader reader = optionalReader.get();
+        readerService.deleteReader(reader);
     }
 
     @GetMapping("/books")
@@ -69,7 +90,6 @@ public class LibraryController {
     public List<Reader> getAllReaders() {
         return readerService.findAll();
     }
-
 
     @PostMapping("/readers/add")
     @ResponseStatus(HttpStatus.CREATED)
@@ -105,5 +125,21 @@ public class LibraryController {
         }
 
         return readerService.saveReader(reader);
+    }
+
+    @GetMapping("/books/find/title")
+    public ModelAndView findBookByTitle(ModelMap model, @RequestParam(name = "title") String title) {
+        model.addAttribute("books", bookService.findBooksByTitle(title));
+        return new ModelAndView("bookList");
+    }
+
+    @GetMapping("/readers/find/name")
+    public  ModelAndView findReadersByFullName(ModelMap model,
+                                         @RequestParam(name = "firstName") String firstName,
+                                         @RequestParam(name = "lastName") String lastName) {
+        model.addAttribute(
+                "readers",
+                readerService.findReadersByFullName(firstName, lastName));
+        return new ModelAndView("readerList");
     }
 }

@@ -20,8 +20,10 @@
                 <input type="text" name="telephoneNumber">
             </label>
             <br>
-            <button type="submit">Add this reader</button>
+            <button class="btn" type="submit">Add this reader</button>
         </form>
+        <br>
+        <a href="/"><button class="btn">Back</button></a>
     </body>
 </html>
 

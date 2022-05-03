@@ -53,4 +53,12 @@ public class ReaderService {
     public List<Reader> findAll() {
         return readerRepository.findAll();
     }
+
+    public void deleteReader(Reader reader) {
+        readerRepository.delete(reader);
+    }
+
+    public Optional<Reader> findById(Integer readerId) {
+        return readerRepository.findById(readerId);
+    }
 }

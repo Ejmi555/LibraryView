@@ -24,4 +24,7 @@ public interface LoanRepository extends JpaRepository<Loan, Integer> {
 
     @Query("FROM Loan WHERE returnDate = :returnDate")
     List<Loan> findAllByReturnDate(@Param("returnDate") LocalDate returnDate);
+
+    @Query("FROM Loan ORDER BY loanDate")
+    List<Loan> getAllOrderByLoanDate();
 }

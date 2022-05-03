@@ -23,6 +23,14 @@ public class BookService {
         return bookRepository.findById(bookId);
     }
 
+    public List<Book> findBooksByTitle(String title) {
+        return bookRepository.findBooksByTitle(title);
+    }
+
+    public List<Book> findBooksByAuthor(String author) {
+        return bookRepository.findBooksByAuthor(author);
+    }
+
     public List<Book> findAll() {
         return bookRepository.findAll();
     }
@@ -34,5 +42,9 @@ public class BookService {
                 .isbn(isbn)
                 .build();
         return bookRepository.save(book);
+    }
+
+    public void deleteBook(Book book) {
+        bookRepository.delete(book);
     }
 }
