@@ -40,11 +40,22 @@ public class BookService {
                 .title(title)
                 .author(author)
                 .isbn(isbn)
+                .isAvailable(true)
                 .build();
         return bookRepository.save(book);
     }
 
     public void deleteBook(Book book) {
         bookRepository.delete(book);
+    }
+
+    public Optional<Book> updateBook(int bookId, String title, String author, Long isbn) {
+        Book book = Book.builder()
+                .bookId(bookId)
+                .title(title)
+                .author(author)
+                .isbn(isbn)
+                .build();
+        return bookRepository.findById(bookId).map(savedBook -> bookRepository.save(book));
     }
 }

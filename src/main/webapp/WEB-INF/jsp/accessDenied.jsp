@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Access Denied</title>
     <base href="${pageContext.request.contextPath}">
-    <link rel="stylesheet" href="../css/operation.css" type="text/css">
+    <link rel="stylesheet" href="/resources/css/operation.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
 </head>
 <body>

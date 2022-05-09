@@ -4,11 +4,11 @@
 <html lang="en">
     <head>
         <title>Form - getting a book</title>
-        <link rel="stylesheet" href="../css/operation.css" type="text/css">
+        <link rel="stylesheet" href="/resources/css/operation.css" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
     </head>
     <body>
-        <form action="/books" method="get">
+        <form action="/book" method="get">
             <p>Search by book id:</p>
             <label>
                 <input type="number" name="id">

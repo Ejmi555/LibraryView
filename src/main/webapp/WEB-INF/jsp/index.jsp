@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Homepage</title>
     <base href="${pageContext.request.contextPath}">
-    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <link rel="stylesheet" href="/resources/css/index.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -19,22 +19,22 @@
         <h3>What would you like to do?</h3>
                 <div>
                     <p>Regarding a book:</p>
-                    <a href="/books">Browse the books</a><br>
+                    <a href="/books/find/all">Browse the books</a><br>
                     <a href="/books/find">Find a book</a><br>
                     <a href="/books/add">Add a book</a><br>
                 </div>
                 <div>
                     <p>Regarding a reader:</p>
                     <a href="/profile">Check profile</a><br>
-                    <a href="/readers">Browse readers</a><br>
+                    <a href="/readers/find/all">Browse readers</a><br>
                     <a href="/readers/find">Find a reader</a><br>
                     <a href="/readers/add">Add a reader</a><br>
-                    <a href="ścieżka">Register reader's resignation</a><br>
                 </div>
                 <div>
                     <p>Regarding loans:</p>
-                    <a href="ścieżka">Register lending a book</a><br>
-                    <a href="ścieżka">Register returning a book</a>
+                    <a href="/loans/lend">Register lending a book</a><br>
+                    <a href="/loans/return">Register returning a book</a><br>
+                    <a href="/loans/find/all">Show all loans</a>
                 </div>
     </article>
 </body>

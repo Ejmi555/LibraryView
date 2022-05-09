@@ -57,4 +57,10 @@ public class LibraryViewController {
 
     @GetMapping("/accessDenied")
     public ModelAndView accessDenied() { return new ModelAndView("accessDenied"); }
+
+    @GetMapping("/loans/lend")
+    public ModelAndView addLoanForm() {
+        return new ModelAndView("addLoan");
+    }
+
 }

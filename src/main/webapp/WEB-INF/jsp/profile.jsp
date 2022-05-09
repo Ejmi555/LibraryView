@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Your profile</title>
         <base href="${pageContext.request.contextPath}">
-        <link rel="stylesheet" href="css/profile.css" type="text/css">
+        <link rel="stylesheet" href="/resources/css/profile.css" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
     </head>
 <body>
@@ -18,7 +18,7 @@
     <div><h1>Profile</h1></div>
 
     <figure>
-        <img class="image" src="../images/default-user-image.png" alt="user image">
+        <img class="image" src="../resources/images/default-user-image.png" alt="user image">
     </figure>
 
 <div class="role"><b>${username}:</b> ${authorities}</div>

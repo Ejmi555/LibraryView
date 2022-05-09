@@ -9,6 +9,7 @@ import pl.library.libraryview.model.Reader;
 import pl.library.libraryview.repository.LoanRepository;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 public class LoanService {
@@ -29,5 +30,9 @@ public class LoanService {
                 .build();
         return loanRepository.save(loan);
     }
+
+    public List<Loan> getLoans() { return loanRepository.getAllOrderByLoanDate();}
+
+    public List<Loan> findAll() { return loanRepository.findAll();}
 }
 

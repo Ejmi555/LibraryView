@@ -1,5 +1,6 @@
 package pl.library.libraryview.service;
 
+import pl.library.libraryview.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.library.libraryview.model.Reader;
@@ -48,6 +49,21 @@ public class ReaderService {
         Reader reader = getReader(readerId).orElseThrow();
         reader.setResignationDate(LocalDate.now());
         readerRepository.save(reader);
+    }
+
+    public Reader updateReader(int readerId, String firstName, String lastName, String address,
+                               String telephoneNumber) {
+        Reader reader = getReader(readerId).orElseThrow(ResourceNotFoundException::new);
+        Reader reader1 = Reader.builder()
+                .readerId(readerId)
+                .firstName(firstName)
+                .lastName(lastName)
+                .address(address)
+                .telephoneNumber(telephoneNumber)
+                .registrationDate(reader.getRegistrationDate())
+                .resignationDate(reader.getResignationDate())
+                .build();
+        return  readerRepository.save(reader1);
     }
 
     public List<Reader> findAll() {

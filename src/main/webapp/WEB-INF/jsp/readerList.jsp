@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <title>Finding a reader</title>
-        <link rel="stylesheet" href="../css/operation.css" type="text/css">
+        <link rel="stylesheet" href="/resources/css/operation.css" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
     </head>
     <body>
